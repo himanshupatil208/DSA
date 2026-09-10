@@ -9,8 +9,6 @@ class Solution {
             temp=temp/10;
         }
         System.out.println(a);
-        if(x==a)
-            return true;
-        else return false;
+        return x==a;
     }
 }
