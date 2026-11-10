@@ -2,8 +2,6 @@ class Solution {
     public List<Integer> getRow(int rowIndex ) {
         List<List<Integer>> result = new ArrayList<>();
         int numRows = rowIndex + 1;
-        if(numRows==0)
-            return new ArrayList<>(1);
         for(int i=0; i<numRows; i++){
             List<Integer> row = new ArrayList<>();
 
