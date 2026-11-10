@@ -1,25 +1,25 @@
+
 class Solution {
-    public List<Integer> getRow(int rowIndex ) {
-        List<List<Integer>> result = new ArrayList<>();
-        int numRows = rowIndex + 1;
-        for(int i=0; i<numRows; i++){
-            List<Integer> row = new ArrayList<>();
+    public List<Integer> getRow(int rowIndex) {
 
-            for(int j=0; j<=i; j++){
-                if(j==0 || j==i)
-                    row.add(1);
+        List<Integer> row = new ArrayList<>();
+        row.add(1);
 
-                else{
-                    int sum= result.get(i-1).get(j-1) + + result.get(i - 1).get(j);
-                    row.add(sum);
-                }
+        for (int i = 1; i <= rowIndex; i++) {
 
-                
+            List<Integer> newRow = new ArrayList<>();
+            newRow.add(1);
+
+            for (int j = 1; j < i; j++) {
+                int sum = row.get(j - 1) + row.get(j);
+                newRow.add(sum);
             }
-            result.add(new ArrayList<>(row));
 
+            newRow.add(1);
+
+            row = newRow;
         }
 
-        return result.get(numRows-1);
+        return row;
     }
 }
